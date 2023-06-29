@@ -57,20 +57,20 @@ const Comic: React.FC = () => {
   const { state } = useLocation() as ComicLocationType;
   const setTitle = useTitle();
 
+  const comic = useMemo(
+    () => state?.comic || comicFromContext,
+    [comicFromContext, state?.comic],
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTitle('comic');
+    setTitle(`${comic?.title ?? 'Loading'} | Comic`);
 
     if (!state?.comic) {
       fetchComic(Number(id));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, state?.comic]);
-
-  const comic = useMemo(
-    () => state?.comic || comicFromContext,
-    [comicFromContext, state?.comic],
-  );
 
   return (
     <>

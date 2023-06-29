@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                 </InputGroup>
               </Col>
             </Row>
-            <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center mb-3">
+            <Row className="row-cols-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-6 g-3 justify-content-center mb-3">
               {isLoading && <Loading />}
               {error && <h2 className="text-center">{error}</h2>}
               {!isLoading &&

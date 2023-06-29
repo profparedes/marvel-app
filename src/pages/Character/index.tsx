@@ -36,20 +36,20 @@ const Character: React.FC = () => {
   const { state } = useLocation() as CharacterLocationType;
   const setTitle = useTitle();
 
+  const character = useMemo(
+    () => state?.character || characterFromContext,
+    [characterFromContext, state?.character],
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTitle('character');
+    setTitle(`${character?.name ?? 'Loading'} | Character`);
 
     if (!state?.character) {
       fetchCharacter(Number(id));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id, state?.character]);
-
-  const character = useMemo(
-    () => state?.character || characterFromContext,
-    [characterFromContext, state?.character],
-  );
+  }, [id, state?.character, character?.name]);
 
   return (
     <>
