@@ -59,7 +59,7 @@ export const CharactersProvider: React.FC<ICharactersProviderProps> = ({
       setTotalPages(Math.ceil(response.data.data.total / limit));
     } catch {
       // eslint-disable-next-line no-console
-      setError('Algo de errado não está certo!');
+      setError('Falha no carregamento da API');
     } finally {
       setIsLoading(false);
     }
@@ -74,7 +74,7 @@ export const CharactersProvider: React.FC<ICharactersProviderProps> = ({
       setCharacter(response.data.data.results[0]);
     } catch {
       // eslint-disable-next-line no-console
-      setError('Algo de errado não está certo!');
+      setError('Falha no carregamento da API');
     } finally {
       setIsLoading(false);
     }
