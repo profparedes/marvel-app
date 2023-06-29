@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
     <div>
       <ImgContainer className="py-5">
         <Container>
-          <Row className="text-center row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
-            <Col>
+          <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
+            <Col className="text-center mb-3">
               <img src={MLogo} alt="Marvel Logo" />
             </Col>
             <Col className="d-none d-md-block">
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               <p>MARVEL UNLIMITED</p>
               <p>MARVEL BIOGRAPHY</p>
             </Col>
-            <Col className="justify-content-center">
+            <Col className="text-center justify-content-center">
               <p>FOLLOW MARVEL</p>
               <div className="d-flex justify-content-center gap-2">
                 <p>

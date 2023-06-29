@@ -125,7 +125,7 @@ const Comic: React.FC = () => {
                             <p className="h5 mt-3">
                               {comic.prices.length > 1 ? 'Prices' : 'Price'}
                             </p>
-                            <Row className="row-cols-2">
+                            <Row className="row-cols-1 row-cols-md-2">
                               {comic.prices.map((price) => (
                                 <Col key={price.price}>
                                   {price.type}: {price.price} USD
@@ -135,7 +135,7 @@ const Comic: React.FC = () => {
                           </>
                         )}
                         {comic.dates.length > 0 && (
-                          <Row className="row-cols-2 my-3">
+                          <Row className="row-cols-1 row-cols-md-2 my-3">
                             {comic.dates.map((date) => {
                               const isValidDate = isValid(new Date(date.date));
 
