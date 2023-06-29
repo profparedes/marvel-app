@@ -58,7 +58,9 @@ const Comic: React.FC = () => {
   const setTitle = useTitle();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTitle('comic');
+
     if (!state?.comic) {
       fetchComic(Number(id));
     }

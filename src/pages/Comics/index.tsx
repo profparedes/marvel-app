@@ -31,6 +31,7 @@ const Home: React.FC = () => {
   );
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTitle('Comics');
     fetchComics(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps

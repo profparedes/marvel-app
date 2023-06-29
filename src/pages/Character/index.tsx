@@ -37,7 +37,9 @@ const Character: React.FC = () => {
   const setTitle = useTitle();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTitle('character');
+
     if (!state?.character) {
       fetchCharacter(Number(id));
     }
